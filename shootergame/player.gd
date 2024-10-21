@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -36,4 +37,10 @@ func _physics_process(delta: float) -> void:
 func get_input():
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	velocity = input_dir * SPEED
+	
+	if Input.is_action_pressed("left"):
+		$Sprite2D.flip_h = true
+	if Input.is_action_pressed("right"):
+		$Sprite2D.flip_h = false
+	
 	
