@@ -14,7 +14,7 @@ func _print_stuff():
 	DebugDraw2D.set_text("transform.y", transform.y)
 	DebugDraw2D.set_text("global_transform.x", global_transform.x)
 	DebugDraw2D.set_text("global_transform.y", global_transform.y)
-	
+	DebugDraw2D.set_text("vel", velocity)
 	
 func _process(delta: float) -> void:
 	_print_stuff()
