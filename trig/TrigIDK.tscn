@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6wg2iyeoc3b1"]
+
+[ext_resource type="Texture2D" uid="uid://di4dkjtiq53bg" path="res://icon.svg" id="1_asqcn"]
+[ext_resource type="Texture2D" uid="uid://b10wh6wsjwtrm" path="res://frog_Guy.png" id="2_v5xo2"]
+[ext_resource type="Script" path="res://enemy.gd" id="3_mpf40"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player" type="Sprite2D" parent="."]
+position = Vector2(532, 297)
+texture = ExtResource("1_asqcn")
+
+[node name="enemy" type="Sprite2D" parent="."]
+position = Vector2(157, 222)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_v5xo2")
+script = ExtResource("3_mpf40")
