@@ -1,5 +1,6 @@
 extends Sprite2D
 
+@export var time = 5
 @export var speed = 10
 @onready var player = $"../player"
 
@@ -12,19 +13,25 @@ func _ready() -> void:
 	b = a * 17
 	print(b)
 	
+	
 	pass # Replace with function body.
 
+var tot_time:float = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
 	var to_player:Vector2 = player.global_position - global_position
 	
-	DebugDraw2D.set_text("Dist to player", to_player.length())
+	if to_player.length() > 0.5:
+		DebugDraw2D.set_text("Dist to player", to_player.length())
+		
+		to_player = to_player.normalized()
+		DebugDraw2D.set_text("Normalised to player", to_player.length())
+		
+		global_position = global_position + to_player * speed * delta
+		tot_time += delta
 	
-	to_player = to_player.normalized()
-	DebugDraw2D.set_text("Normalised to player", to_player.length())
-	
-	global_position = global_position + to_player * speed * delta
+	DebugDraw2D.set_text("Tot_Time", tot_time)
 	
 	pass
