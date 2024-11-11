@@ -1,5 +1,6 @@
 extends Area2D
 
+#@export var explosion
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -49,7 +50,25 @@ func _process(delta: float) -> void:
 	DebugDraw2D.set_text("rotation", rotation)
 	DebugDraw2D.set_text("glo_rotation", global_rotation)
 	
+	rotation += 0.1
+	
+	position.x += 1
 	
 	
 	
 	pass
+	
+func _on_area_entered(area: Area2D) -> void:
+	print("Collided!")
+		
+	print(area)
+	area.queue_free()
+	
+#	var explosion:Node2D = explosion_scene.instantiate()
+#	explosion.global_position = area.global_position
+#	explosion.emitting = true
+	
+	
+	
+	
+	pass # Replace with function body
