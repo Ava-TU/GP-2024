@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd8mqt3r3euig"]
+
+[ext_resource type="Script" path="res://start_screen.gd" id="1_8uy65"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dg70s"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8uy65")
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 416.0
+offset_right = 558.0
+offset_bottom = 447.0
+scale = Vector2(3, 3)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dg70s")
+text = "Start"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
