@@ -1,22 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqi3v85qsah7e"]
+[gd_scene load_steps=7 format=3 uid="uid://cqi3v85qsah7e"]
 
 [ext_resource type="Script" path="res://button.gd" id="1_0pdq8"]
+[ext_resource type="Texture2D" uid="uid://bfs8hho21siqd" path="res://icon.svg" id="2_ad2bt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l0ngi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8vqxi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bxu0b"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_le0la"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Button" type="Button" parent="."]
-offset_left = 168.0
-offset_top = 115.0
-offset_right = 176.0
-offset_bottom = 123.0
-scale = Vector2(2.83206, 3.51514)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(168, 115)
+texture = ExtResource("2_ad2bt")
+
+[node name="Button" type="Button" parent="Sprite2D"]
+offset_left = -62.0
+offset_top = -62.0
+offset_right = -5.0
+offset_bottom = -39.0
+scale = Vector2(2.16856, 5.27451)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l0ngi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_8vqxi")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bxu0b")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_le0la")
-text = "button "
+text = "
+"
 script = ExtResource("1_0pdq8")
 
-[node name="Button1" type="AudioStreamPlayer2D" parent="Button"]
+[node name="Button1" type="AudioStreamPlayer2D" parent="Sprite2D/Button"]
 unique_name_in_owner = true
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Sprite2D/Button" to="Sprite2D/Button" method="_on_pressed"]

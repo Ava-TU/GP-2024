@@ -14,4 +14,7 @@ func _process(delta: float) -> void:
 func _on_pressed() -> void:
 	%Button1.play()
 	print("1")
+	%Sprite2D.texture = load("res://wallpaper1.jpg")
+	await get_tree().create_timer(1.0).timeout
+	%Sprite2D.texture = load("res://icon.svg")
 	pass # Replace with function body.
