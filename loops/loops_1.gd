@@ -39,12 +39,20 @@ func _draw() -> void:
 	for i in range(basket.size()):
 		print(basket[i])
 		
-	var num_lines = 10
+	var num_lines = 10 
 	var s = get_viewport_rect().size
 	var w = s.x / num_lines
 	
 	for i in range(num_lines):
 		draw_line(Vector2(i * w, 0), Vector2(i * w, s.y), Color.BLUE_VIOLET)
+	
+	var num_h_lines = 4
+	var gap = 50
+	var border = 100
+	
+	for i in range(4):
+		draw_line(Vector2(border, border + gap * i), Vector2(s.x - border, border + gap * i), Color.YELLOW_GREEN)
+	
 	
 	pass
 	
