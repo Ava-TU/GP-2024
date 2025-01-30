@@ -25,9 +25,12 @@ func _draw() -> void:
 	for i in range(10):
 		print(i)
 	
-	#for loop counting backwards
-	for i in range(10, -1, -1):
-		print(i)
+	#while loop counting backwards
+	var count = 10
+	
+	while(count > 0): 
+		print(count)
+		count -= 1
 		
 	var basket = ["apple", "banana", "carrot"]
 	
@@ -46,13 +49,14 @@ func _draw() -> void:
 	for i in range(num_lines):
 		draw_line(Vector2(i * w, 0), Vector2(i * w, s.y), Color.BLUE_VIOLET)
 	
-	var num_h_lines = 4
+	#this draws horizontal lines across the screen
+	var num_h_lines = 10
 	var gap = 50
 	var border = 100
 	
-	for i in range(4):
-		draw_line(Vector2(border, border + gap * i), Vector2(s.x - border, border + gap * i), Color.YELLOW_GREEN)
-	
-	
+	for i in range(num_h_lines):
+		draw_line(Vector2(border, border + gap * i),
+		Vector2(v.size.x - border, border + gap * i), Color.GREEN_YELLOW)
+		
 	pass
 	
