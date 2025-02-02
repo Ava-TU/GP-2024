@@ -6,4 +6,4 @@ func _draw():
 	var radius_step = 10
 
 	for radius in range(0, max_radius, radius_step):
-		draw_circle(center, radius, Color(randf(), randf(), randf()))
+		draw_circle(center, radius, Color(randf(), randf(), randf()), false)
