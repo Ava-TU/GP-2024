@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" path="res://gen_art.gd" id="1_ic5hn"]
 
-[node name="Gen_Art" type="Node2D"]
+[node name="Node3D" type="Node3D"]
+
+[node name="Gen_Art" type="Node2D" parent="."]
+position = Vector2(568, 302)
 script = ExtResource("1_ic5hn")
 
 [node name="Label" type="Label" parent="."]
@@ -21,7 +24,7 @@ offset_bottom = 33.0
 [node name="Label2" type="Label" parent="."]
 offset_left = 22.0
 offset_top = 54.0
-offset_right = 74.0
+offset_right = 79.0
 offset_bottom = 77.0
 text = "Radius:
 "
@@ -32,5 +35,5 @@ offset_top = 62.0
 offset_right = 365.0
 offset_bottom = 78.0
 
-[connection signal="value_changed" from="num_Lines" to="." method="_on_num_lines_value_changed"]
-[connection signal="value_changed" from="radius" to="." method="_on_radius_value_changed"]
+[connection signal="value_changed" from="num_Lines" to="Gen_Art" method="_on_num_lines_value_changed"]
+[connection signal="value_changed" from="radius" to="Gen_Art" method="_on_radius_value_changed"]
