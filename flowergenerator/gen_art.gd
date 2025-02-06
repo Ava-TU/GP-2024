@@ -1,5 +1,13 @@
 extends Node2D
 
+@export var min_radius_increment := 2.0
+@export var max_radius_increment := 10.0
+@export var min_theta_increment := 1.0
+@export var max_theta_increment := 5.0
+@export var max_radius := 700.0
+@export var line_weight := 2.0
+@export var reset_delay := 3.0
+
 var radius:float
 var count:int
 var color_hue_start
@@ -53,4 +61,9 @@ func _on_num_lines_value_changed(value: float) -> void:
 
 func _on_color_picker_button_color_changed(color: Color) -> void:
 	color_hue_start = color.h
+	pass # Replace with function body.
+
+
+func _on_thickness_value_changed(value: float) -> void:
+	thickness = value
 	pass # Replace with function body.

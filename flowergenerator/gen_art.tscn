@@ -42,6 +42,20 @@ offset_top = 108.0
 offset_right = 108.0
 offset_bottom = 141.0
 
+[node name="thickness" type="HSlider" parent="."]
+offset_left = 125.0
+offset_top = 178.0
+offset_right = 357.0
+offset_bottom = 194.0
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 31.0
+offset_top = 171.0
+offset_right = 112.0
+offset_bottom = 194.0
+text = "Thickness:"
+
 [connection signal="value_changed" from="num_Lines" to="Gen_Art" method="_on_num_lines_value_changed"]
 [connection signal="value_changed" from="radius" to="Gen_Art" method="_on_radius_value_changed"]
 [connection signal="color_changed" from="ColorPickerButton" to="Gen_Art" method="_on_color_picker_button_color_changed"]
+[connection signal="value_changed" from="thickness" to="Gen_Art" method="_on_thickness_value_changed"]
