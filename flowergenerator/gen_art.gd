@@ -7,16 +7,22 @@ func _draw() -> void:
 	
 	var l = float(count)
 	
-	for i in range(l):
-		draw_line(Vector2(i * 100, 0), Vector2(i * 100, 500), Color.SEA_GREEN, 10)
+	#for i in range(l):
+		#draw_line(Vector2(i * 100, 0), Vector2(i * 100, 500), Color.SEA_GREEN, 10)
 	
 	
 	var theta_inc = PI * 2.0 / l
+	var px = 0
+	var py = 0
+	
 	for i in range(l):
 		var theta = theta_inc * i
 		var x = sin(theta) * radius
 		var y = cos(theta) * radius
-		draw_circle(Vector2(x, y), radius, Color.CORNSILK, false)
+		draw_line(Vector2(px, py), Vector2(x, y), Color.YELLOW, 10)
+		draw_circle(Vector2(x, y), 10, Color.CORNSILK, false)
+		px = x
+		py = y
 	
 	pass
 
