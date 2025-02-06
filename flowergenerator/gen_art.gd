@@ -33,7 +33,7 @@ func _draw() -> void:
 		var theta = theta_inc * i
 		var x = sin(theta) * r
 		var y = cos(theta) * r
-		var c:Color = Color.from_hsv(color_hue, 1, 1, alpha)
+		var c:Color = Color(color_hue, 1, 1, alpha)
 		draw_line(Vector2(px, py), Vector2(x, y), Color.REBECCA_PURPLE, 10)
 		draw_circle(Vector2(px, py), 1, c, false, thickness)
 		color_hue += hue_inc * 0.01
