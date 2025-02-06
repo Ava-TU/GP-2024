@@ -17,3 +17,20 @@ offset_left = 105.0
 offset_top = 17.0
 offset_right = 368.0
 offset_bottom = 33.0
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 22.0
+offset_top = 54.0
+offset_right = 74.0
+offset_bottom = 77.0
+text = "Radius:
+"
+
+[node name="radius" type="HSlider" parent="."]
+offset_left = 107.0
+offset_top = 62.0
+offset_right = 365.0
+offset_bottom = 78.0
+
+[connection signal="value_changed" from="num_Lines" to="." method="_on_num_lines_value_changed"]
+[connection signal="value_changed" from="radius" to="." method="_on_radius_value_changed"]
