@@ -8,7 +8,7 @@ func _draw() -> void:
 	var l = float(count)
 	
 	for i in range(l):
-		draw_line(Vector2(i * 100, 0), Vector2(i * 100, 500), Color.BLUE, 10)
+		draw_line(Vector2(i * 100, 0), Vector2(i * 100, 500), Color.SEA_GREEN, 10)
 	
 	
 	var theta_inc = PI * 2.0 / l
