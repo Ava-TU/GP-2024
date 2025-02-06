@@ -11,18 +11,19 @@ func _draw() -> void:
 		#draw_line(Vector2(i * 100, 0), Vector2(i * 100, 500), Color.SEA_GREEN, 10)
 	
 	
-	var theta_inc = PI * 2.0 / l
+	var theta_inc = 1
 	var px = 0
 	var py = 0
-	
+	var r = 0
 	for i in range(l):
 		var theta = theta_inc * i
-		var x = sin(theta) * radius
-		var y = cos(theta) * radius
-		draw_line(Vector2(px, py), Vector2(x, y), Color.YELLOW, 10)
-		draw_circle(Vector2(x, y), 10, Color.CORNSILK, false)
+		var x = sin(theta) * r
+		var y = cos(theta) * r
+		draw_line(Vector2(px, py), Vector2(x, y), Color.REBECCA_PURPLE, 10)
+		#draw_circle(Vector2(x, y), 10, Color.CORNSILK, false)
 		px = x
 		py = y
+		r = r + radius
 	
 	pass
 
