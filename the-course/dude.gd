@@ -25,6 +25,9 @@ extends CharacterBody2D
 # Used to create the bullets
 @export var bullet_scene:PackedScene
 @export var bullet_spawn:Node2D
+@export var fire_rate: float = 0.5 # Time between shots in seconds
+
+@onready var shoot_timer: Timer = $"../ShootTimer"
 
 @export var lives:int = 100
 @export var ammo:int = 100

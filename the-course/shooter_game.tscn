@@ -56,3 +56,5 @@ offset_top = 419.0
 offset_right = 344.0
 offset_bottom = 494.0
 text = "ufo_COUNT: 0"
+
+[node name="ShootTimer" type="Timer" parent="."]
