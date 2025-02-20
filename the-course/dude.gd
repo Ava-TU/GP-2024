@@ -11,6 +11,7 @@ extends CharacterBody2D
 @export var line_size = 2
 @export var color:Color = Color.WHITE
 @onready var radius = size / 2 
+@onready var fireRateTimer = %ShootTimer
 
 # So I can create multiple players with different inputs
 @export var turn_left_input:String
@@ -25,9 +26,9 @@ extends CharacterBody2D
 # Used to create the bullets
 @export var bullet_scene:PackedScene
 @export var bullet_spawn:Node2D
-@export var fire_rate: float = 0.5 # Time between shots in seconds
 
-@onready var shoot_timer: Timer = $"../ShootTimer"
+@export var fireRate: float = 0.5
+
 
 @export var lives:int = 100
 @export var ammo:int = 100
@@ -72,7 +73,9 @@ func _process(delta: float) -> void:
 		$"../CanvasLayer/lives".text = "LIVES: " + str(lives)
 		
 		# if i can fire
-		if Input.is_action_pressed("fire") and can_fire and ammo > 0:
+		if Input.is_action_pressed("fire") and can_fire and ammo > 0 and fireRateTimer.is_stopped():
+			fireRateTimer.start(fireRate)
+			
 			# create a bullet
 			# set its position and rotation
 			var b = bullet_scene.instantiate()
@@ -91,10 +94,7 @@ func _process(delta: float) -> void:
 			ammo = ammo - 1
 			$"../CanvasLayer/ammo".text = "AMMO: " + str(ammo)
 			$Timer.start() # to set can_fire back to true
-			
-		if Input.is_action_pressed("fire") and shoot_timer.is_stopped():
-			shoot_timer.start()	
-		
+	
 	pass
 	
 func _physics_process(delta: float) -> void:
@@ -145,19 +145,10 @@ func _physics_process(delta: float) -> void:
 func _ready() -> void:
 	if ! Engine.is_editor_hint():	
 		respawn()
-		
-	shoot_timer.wait_time = fire_rate
-	shoot_timer.start()
-	
 	pass
 
 
 func _on_timer_timeout() -> void:
 	# allow the player to fire again
 	can_fire = true
-	pass # Replace with function body.
-	
-
-
-func _on_shoot_timer_timeout() -> void:
 	pass # Replace with function body.
