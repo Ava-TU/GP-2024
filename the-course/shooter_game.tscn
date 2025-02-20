@@ -14,7 +14,7 @@ rotation = 5.68262
 collision_mask = 5
 color = Color(0, 1, 0.25, 0.847059)
 speed = 500.0
-fireRate = null
+fireRate = 0.1
 lives = 10
 explosion = ExtResource("3_c5ar1")
 
@@ -60,3 +60,4 @@ text = "ufo_COUNT: 0"
 
 [node name="ShootTimer" type="Timer" parent="."]
 unique_name_in_owner = true
+one_shot = true
