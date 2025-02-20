@@ -91,6 +91,10 @@ func _process(delta: float) -> void:
 			ammo = ammo - 1
 			$"../CanvasLayer/ammo".text = "AMMO: " + str(ammo)
 			$Timer.start() # to set can_fire back to true
+			
+		if Input.is_action_pressed("fire") and shoot_timer.is_stopped():
+			shoot_timer.start()	
+		
 	pass
 	
 func _physics_process(delta: float) -> void:
@@ -141,10 +145,19 @@ func _physics_process(delta: float) -> void:
 func _ready() -> void:
 	if ! Engine.is_editor_hint():	
 		respawn()
+		
+	shoot_timer.wait_time = fire_rate
+	shoot_timer.start()
+	
 	pass
 
 
 func _on_timer_timeout() -> void:
 	# allow the player to fire again
 	can_fire = true
+	pass # Replace with function body.
+	
+
+
+func _on_shoot_timer_timeout() -> void:
 	pass # Replace with function body.

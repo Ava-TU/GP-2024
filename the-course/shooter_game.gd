@@ -33,3 +33,7 @@ func _process(delta):
 	$CanvasLayer/target.text="target_count: " + str(target)
 	$CanvasLayer/level.text="level: " + str(level)
 	pass
+
+
+func _on_shoot_timer_timeout() -> void:
+	pass # Replace with function body.
