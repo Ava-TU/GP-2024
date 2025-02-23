@@ -4,13 +4,17 @@ var tween: Tween
 
 func _ready():
 	tween = create_tween()
-	tween.set_loops(0)  # Loop indefinitely
+	tween.set_loops(0)
 
-	# Square movement pattern
-	tween.tween_property(self, "position", position + Vector2(200, 0), 1.0)  # Right
-	tween.tween_property(self, "position", position + Vector2(0, 200), 1.0)  # Down
-	tween.tween_property(self, "position", position + Vector2(-200, 0), 1.0)  # Left
-	tween.tween_property(self, "position", position + Vector2(0, -200), 1.0)  # Up
+	# Move in a square pattern
+	tween.tween_property(self, "position", position + Vector2(200, 0), 1.0)
+	tween.tween_property(self, "rotation", rotation + PI / 2, 1.0)  # Rotate 90 degrees
+	tween.tween_property(self, "position", position + Vector2(0, 200), 1.0)
+	tween.tween_property(self, "rotation", rotation + PI / 2, 1.0)  # Rotate 90 degrees
+	tween.tween_property(self, "position", position + Vector2(-200, 0), 1.0)
+	tween.tween_property(self, "rotation", rotation + PI / 2, 1.0)  # Rotate 90 degrees
+	tween.tween_property(self, "position", position + Vector2(0, -200), 1.0)
+	tween.tween_property(self, "rotation", rotation + PI / 2, 1.0)  # Rotate 90 degrees
 
 func _draw():
 	# Draw a circle for the enemy's body
