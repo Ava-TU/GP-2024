@@ -6,7 +6,7 @@ var radius:float = 120
 var angle:float = 0.0
 var speed:float = 1.5
 
-@export var _X_OFFSET = 150
+@export var _X_OFFSET = 250
 @export var _Y_OFFSET = 150
 
 func _process(delta):
