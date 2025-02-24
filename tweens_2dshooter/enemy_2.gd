@@ -43,5 +43,3 @@ func _ready() -> void:
 	tween.tween_property(self, "scale", Vector2(1, 1), 0.6)
 	tween.set_parallel(true)
 	tween.tween_property(self, "position", position + Vector2(100, 20), 2)
-	
-	
