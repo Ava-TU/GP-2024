@@ -19,14 +19,14 @@ func _ready() -> void:
 	tween = create_tween()
 	tween.set_loops(0) # Infinte Loops
 	
-	tween.tween_property(self, "position", position + Vector2(200, 0), 1.0)
+	tween.tween_property(self, "position", position + Vector2(200, 0), 1.0) # Moves postion
 	tween.tween_property(self, "rotation", rotation + 1.5, 1.0) # Rotate 90 Degrees
-	tween.tween_property(self, "position", position + Vector2(200, 200), 1.0)
-	tween.tween_property(self, "rotation", rotation + 2.5, 1.0)
-	tween.tween_property(self, "position", position + Vector2(10, -20), 1.0)
-	tween.tween_property(self, "rotation", rotation + 3, 1.0)
-	tween.tween_property(self, "position", position + Vector2(-30, -150), 1.0)
-	tween.tween_property(self, "rotation", rotation + 0, 1.0)
-	tween.tween_property(self, "position", position + Vector2(-60, 200), 1.0)
-	tween.tween_property(self, "rotation", rotation + -2, 1.0)
+	tween.tween_property(self, "position", position + Vector2(200, 200), 1.0) # Moves postion
+	tween.tween_property(self, "rotation", rotation + 2.5, 1.0) # Rotates
+	tween.tween_property(self, "position", position + Vector2(10, -20), 1.0) # Moves position
+	tween.tween_property(self, "rotation", rotation + 3, 1.0) # Rotates
+	tween.tween_property(self, "position", position + Vector2(-30, -150), 1.0) # Moves position
+	tween.tween_property(self, "rotation", rotation + 0, 1.0) # Rotates
+	tween.tween_property(self, "position", position + Vector2(-60, 200), 1.0) # Moves position
+	tween.tween_property(self, "rotation", rotation + -2, 1.0) # Rotates
 	
