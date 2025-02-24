@@ -18,8 +18,9 @@ func _draw():
 func _ready() -> void:
 	tween = create_tween()
 	tween.set_loops(0) # Infinte Loops
-	tween.set_trans(Tween.TRANS_BACK)
-	tween.set_ease(Tween.EASE_OUT)
+	
+	tween.set_trans(Tween.TRANS_BACK) # Makes movement smoother/less linear
+	tween.set_ease(Tween.EASE_OUT) # Eases out/Slows the animation down at the end of each cycle
 	
 	tween.tween_property(self, "position", position + Vector2(200, 0), 1.0) # Moves postion
 	tween.tween_property(self, "rotation", rotation + 1.5, 1.0) # Rotate 90 Degrees
