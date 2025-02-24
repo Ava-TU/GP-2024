@@ -14,7 +14,11 @@ func _process(delta):
 	
 func circular_motion():
 	angle += speed * get_process_delta_time()
+	var x_pos = cos(angle)
+	var y_pos = sin(angle)
 	
+	position.x = radius * x_pos + _X_OFFSET
+	position.y = radius * y_pos + _Y_OFFSET
 
 func _draw():
 	# Body
