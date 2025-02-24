@@ -18,7 +18,9 @@ func _draw():
 	draw_circle(Vector2(35, 50), 3, Color.MEDIUM_ORCHID, false, 2, true)
 	
 func _ready() -> void:
-	tween = create_tween()
+	var tween = create_tween()
 	tween.set_loops(0) # Infinite Loops
 	
+	tween.tween_property(self, "scale", Vector2(1.2, 1.2), 1)
+	tween.tween_property(self, "scale", Vector2(1, 1), 1)
 	
