@@ -12,6 +12,7 @@ var speed:float = 1.5
 func _process(delta):
 	circular_motion()
 	
+# Supposed to move enemy in circle but broke
 func circular_motion():
 	angle += speed * get_process_delta_time()
 	var x_pos = cos(angle)
@@ -39,7 +40,8 @@ func _ready() -> void:
 	var tween = create_tween()
 	tween.set_loops(0) # Infinite Loops
 	
-	tween.tween_property(self, "scale", Vector2(1.2, 1.2), 0.6)
-	tween.tween_property(self, "scale", Vector2(1, 1), 0.6)
-	tween.set_parallel(true)
-	tween.tween_property(self, "position", position + Vector2(100, 20), 2)
+	tween.tween_property(self, "scale", Vector2(1.2, 1.2), 0.6) # Scales the enemy up
+	tween.tween_property(self, "scale", Vector2(1, 1), 0.6) # Scales enemy back to original scale
+	tween.set_parallel(true) # makes the tweens start at the same time as eachother
+	tween.tween_property(self, "position", position + Vector2(100, 20), 2) # moves position
+	
