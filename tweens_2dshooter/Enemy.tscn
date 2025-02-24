@@ -1,7 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dr4hv5quobuus"]
+[gd_scene load_steps=3 format=3 uid="uid://dr4hv5quobuus"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_tya0o"]
+[ext_resource type="Script" path="res://enemy_2.gd" id="2_fywih"]
 
-[node name="Enemy" type="Node2D"]
+[node name="Node2D" type="Node2D"]
+
+[node name="Enemy2" type="Node2D" parent="."]
+position = Vector2(330, 223)
+script = ExtResource("2_fywih")
+
+[node name="Enemy" type="Node2D" parent="."]
 position = Vector2(554, 312)
 script = ExtResource("1_tya0o")
