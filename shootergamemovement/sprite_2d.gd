@@ -16,11 +16,11 @@ func move_grid():
 	# Check if any child is at screen edge
 	var should_change_direction = false
 	for child in get_children():
-		if (child.global_position.x < 50 and move_direction < 0) or \
-		   (child.global_position.x > 590 and move_direction > 0):
+		if (child.global_position.x < 90 and move_direction < 0) or \
+		   (child.global_position.x > 1060 and move_direction > 0):
 			should_change_direction = true
 			break
-	
+	print(should_change_direction)
 	if should_change_direction:
 		move_direction *= -1
 		position.y += move_distance  # Move down
