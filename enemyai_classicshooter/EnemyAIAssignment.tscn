@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://og1ta4ughmuy"]
+
+[ext_resource type="Texture2D" uid="uid://cyay3psbn0m6j" path="res://icon.svg" id="1_ito5s"]
+[ext_resource type="Script" path="res://enemyGrid.gd" id="2_ovtfe"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(392, 231)
+texture = ExtResource("1_ito5s")
+script = ExtResource("2_ovtfe")
+move_distance = 50
