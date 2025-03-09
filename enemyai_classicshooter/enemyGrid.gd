@@ -26,17 +26,3 @@ func move_grid():
 		position.y += move_distance  # Move down
 	else:
 		position.x += move_direction * move_distance  # Move sideways
-
-
-func _on_left_wall_area_entered(area):
-	if (move_direction == -1):
-		position.y += position.y
-		move_direction += -1
-	pass # Replace with function body.
-
-
-func _on_right_wall_area_entered(area: Area2D) -> void:
-	if (move_direction == 1):
-		position.y += position.y
-		move_direction += -1
-	pass # Replace with function body.
