@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://og1ta4ughmuy"]
+[gd_scene load_steps=4 format=3 uid="uid://og1ta4ughmuy"]
 
 [ext_resource type="Texture2D" uid="uid://cyay3psbn0m6j" path="res://icon.svg" id="1_ito5s"]
 [ext_resource type="Script" path="res://enemyGrid.gd" id="2_ovtfe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pk78w"]
+size = Vector2(20, 1160)
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,3 +13,30 @@ position = Vector2(392, 231)
 texture = ExtResource("1_ito5s")
 script = ExtResource("2_ovtfe")
 move_distance = 50
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Right_Wall" type="Area2D" parent="Walls"]
+position = Vector2(1153, 347)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right_Wall"]
+position = Vector2(0, -23.5)
+shape = SubResource("RectangleShape2D_pk78w")
+
+[node name="Left_Wall" type="Area2D" parent="Walls"]
+position = Vector2(-1, 347)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left_Wall"]
+position = Vector2(0, -23.5)
+shape = SubResource("RectangleShape2D_pk78w")
+
+[node name="Bottom_Wall" type="Area2D" parent="Walls"]
+position = Vector2(568, 640)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Bottom_Wall"]
+position = Vector2(-0.00012207, -12)
+shape = SubResource("RectangleShape2D_pk78w")
+
+[connection signal="area_entered" from="Walls/Right_Wall" to="Sprite2D" method="_on_right_wall_area_entered"]
+[connection signal="area_entered" from="Walls/Left_Wall" to="Sprite2D" method="_on_left_wall_area_entered"]
