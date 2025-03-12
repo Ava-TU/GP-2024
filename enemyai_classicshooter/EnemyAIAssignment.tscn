@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://og1ta4ughmuy"]
 
 [ext_resource type="Texture2D" uid="uid://cyay3psbn0m6j" path="res://icon.svg" id="1_ito5s"]
-[ext_resource type="Script" path="res://enemyGrid.gd" id="2_ovtfe"]
+[ext_resource type="Script" uid="uid://c2pg2drk6v2p4" path="res://GridMovement.gd" id="2_pefa2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pk78w"]
 size = Vector2(20, 1160)
@@ -9,10 +9,9 @@ size = Vector2(20, 1160)
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(392, 231)
+position = Vector2(315, 317)
 texture = ExtResource("1_ito5s")
-script = ExtResource("2_ovtfe")
-move_distance = 50
+script = ExtResource("2_pefa2")
 
 [node name="Walls" type="Node" parent="."]
 
