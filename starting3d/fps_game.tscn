@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://imjngne1qaw7"]
+[gd_scene load_steps=8 format=3 uid="uid://imjngne1qaw7"]
 
-[ext_resource type="Script" uid="uid://cnru57pdr206i" path="res://character_body_3d.gd" id="1_cykxj"]
+[ext_resource type="Script" uid="uid://c5lp7cgs1awcl" path="res://character_body_3d.gd" id="1_cykxj"]
+[ext_resource type="Texture2D" uid="uid://dgmyplqjdb1bk" path="res://icon.svg" id="2_o6d5r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvcn8"]
 vertex_color_use_as_albedo = true
@@ -13,6 +14,8 @@ material = SubResource("StandardMaterial3D_tvcn8")
 size = Vector3(5.12201, 0.247192, 4.18091)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tvcn8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o6d5r"]
 
 [node name="fps_game" type="Node3D"]
 
@@ -31,7 +34,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0445251, 0.0215518, 0.0740
 shape = SubResource("BoxShape3D_tvcn8")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.454937, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.454937, 1.30203)
+axis_lock_angular_y = true
 script = ExtResource("1_cykxj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
@@ -39,3 +43,11 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_tvcn8")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D"]
+transform = Transform3D(0.347978, 0, 0, 0, 0.513069, 0, 0, 0, 1, 0, -0.0539205, 0)
+texture = ExtResource("2_o6d5r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2783)
+mesh = SubResource("BoxMesh_o6d5r")
