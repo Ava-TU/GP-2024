@@ -3,36 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://cyay3psbn0m6j" path="res://icon.svg" id="1_ito5s"]
 [ext_resource type="Script" uid="uid://c2pg2drk6v2p4" path="res://GridMovement.gd" id="2_pefa2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pk78w"]
-size = Vector2(20, 1160)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pefa2"]
+size = Vector2(125, 126)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(315, 317)
+position = Vector2(585, 252)
 texture = ExtResource("1_ito5s")
 script = ExtResource("2_pefa2")
 
-[node name="Walls" type="Node" parent="."]
-
-[node name="Right_Wall" type="Area2D" parent="Walls"]
-position = Vector2(1153, 347)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right_Wall"]
-position = Vector2(0, -23.5)
-shape = SubResource("RectangleShape2D_pk78w")
-
-[node name="Left_Wall" type="Area2D" parent="Walls"]
-position = Vector2(-1, 347)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left_Wall"]
-position = Vector2(0, -23.5)
-shape = SubResource("RectangleShape2D_pk78w")
-
-[node name="Bottom_Wall" type="Area2D" parent="Walls"]
-position = Vector2(568, 640)
-rotation = 1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Bottom_Wall"]
-position = Vector2(-0.00012207, -12)
-shape = SubResource("RectangleShape2D_pk78w")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_pefa2")
