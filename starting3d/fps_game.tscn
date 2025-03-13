@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://imjngne1qaw7"]
+
+[ext_resource type="Script" uid="uid://cnru57pdr206i" path="res://character_body_3d.gd" id="1_cykxj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvcn8"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.203922, 0.215686, 0.32549, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tvcn8"]
+material = SubResource("StandardMaterial3D_tvcn8")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tvcn8"]
+size = Vector3(5.12201, 0.247192, 4.18091)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tvcn8"]
+
+[node name="fps_game" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0.30684, -0.0654816, 0.949506, -0.394778, 0.899006, 0.189574, -0.0103196, 2.56165, -0.0188897)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(5.01687, 0, 0, 0, 0.145182, 0, 0, 0, 4.31516, 0, 0, 0)
+mesh = SubResource("BoxMesh_tvcn8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0445251, 0.0215518, 0.0740967)
+shape = SubResource("BoxShape3D_tvcn8")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.454937, 0)
+script = ExtResource("1_cykxj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_tvcn8")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
