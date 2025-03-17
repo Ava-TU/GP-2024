@@ -1,6 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1w3cu1rqb6mb"]
+[gd_scene load_steps=11 format=3 uid="uid://c1w3cu1rqb6mb"]
 
 [ext_resource type="Script" uid="uid://6gtno30684g6" path="res://endless_runner.gd" id="1_hfr6d"]
+[ext_resource type="Script" uid="uid://x3a5kp2b6dgx" path="res://platform_spawner.gd" id="2_1gk6g"]
+[ext_resource type="PackedScene" uid="uid://c8kb85rmpy1p6" path="res://platform.tscn" id="3_r2dwj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hfp2g"]
 
@@ -58,3 +60,7 @@ shape = SubResource("BoxShape3D_hfp2g")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
 mesh = SubResource("BoxMesh_hfr6d")
+
+[node name="PlatformSpawner" type="Node3D" parent="."]
+script = ExtResource("2_1gk6g")
+platform_scene = ExtResource("3_r2dwj")
