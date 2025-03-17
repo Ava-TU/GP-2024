@@ -2,7 +2,8 @@ extends Node3D
 
 @export var platform_scene: PackedScene
 @export var spawn_distance: float = -20.0
-@export var platform_speed: float = 6.0
+@export var platform_speed: float = 10.0
+
 
 func _ready() -> void:
 	spawn_platform()
