@@ -7,7 +7,9 @@
 [node name="Platform" type="StaticBody3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4.48282, 0, 0, 0, 1, 0, 0, 0, 3.63068, 0, 0, 0)
 shape = SubResource("BoxShape3D_5ajho")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.48282, 0, 0, 0, 1, 0, 0, 0, 3.63068, 0, 0, 0)
 mesh = SubResource("BoxMesh_mi635")
