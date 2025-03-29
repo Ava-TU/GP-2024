@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://bricuhoo6awwn"]
+
+[ext_resource type="Script" uid="uid://wg7prjiarqnu" path="res://scripts/module.gd" id="1_ar0aq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ar0aq"]
+albedo_color = Color(0.237178, 0.520717, 0.370815, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nwbwr"]
+material = SubResource("StandardMaterial3D_ar0aq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwbwr"]
+albedo_color = Color(0.944967, 0, 0.12311, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ar0aq"]
+material = SubResource("StandardMaterial3D_nwbwr")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nwbwr"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nwbwr"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_ar0aq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.0016183, 0.000102067, -4.03874, -0.00189354, 1, 0.000412439, 7.89412, 0.00023989, -0.000827837, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_nwbwr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/MeshInstance3D"]
+transform = Transform3D(-1.10091e-08, 0, -0.161191, 0, 2.29831, 0, 0.251859, 0, -7.04588e-09, -0.250853, 1.60929, 0)
+mesh = SubResource("BoxMesh_ar0aq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-0.251859, 7.27596e-12, 1.40917e-08, 5.82077e-11, 2.29831, -5.96856e-12, -2.20098e-08, -2.26841e-12, -0.161191, 1.09649e-08, 1.60929, -0.250853)
+shape = SubResource("ConcavePolygonShape3D_nwbwr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_nwbwr")
